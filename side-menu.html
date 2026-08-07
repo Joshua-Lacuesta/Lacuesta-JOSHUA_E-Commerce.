@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Side Menu</title>
+  <link rel="stylesheet" href="side-menu.css" />
+  <script src="side-menu.js" defer></script>
+</head>
+<body>
+  <!-- SVG sprite: lightweight icons used by the sidebar -->
+  <svg aria-hidden="true" style="display:none">
+    <symbol id="icon-home" viewBox="0 0 24 24">
+      <path d="M12 3l9 8h-3v7a1 1 0 0 1-1 1h-4v-6H11v6H7a1 1 0 0 1-1-1v-7H3z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-products" viewBox="0 0 24 24">
+      <path d="M6 2h11l3 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM8 6a4 4 0 0 0 8 0" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-categories" viewBox="0 0 24 24">
+      <path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-cart" viewBox="0 0 24 24">
+      <path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.45A1 1 0 0 0 10 17h8v-2H11.42l.93-1.68L19 6H7" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-orders" viewBox="0 0 24 24">
+      <path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-wishlist" viewBox="0 0 24 24">
+      <path d="M12 21s-7-4.35-9-6.5A5 5 0 0 1 6 6c1.5 0 2.5.9 3 1.5C9.5 6.9 10.5 6 12 6a5 5 0 0 1 3 9.5C19 16.65 12 21 12 21z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-profile" viewBox="0 0 24 24">
+      <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-7 2-7 4v2h14v-2c0-2-3-4-7-4z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24">
+      <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm9 4a7 7 0 0 0-.1-1l2.1-1.6-2-3.4-2.5.6A7 7 0 0 0 14 3v-2H10v2a7 7 0 0 0-4.4 1.6L3.1 4.1 1 7.5 3.1 9.1A7 7 0 0 0 3 12c0 .3 0 .7.1 1L1 14.6l2 3.4 2.5-.6A7 7 0 0 0 10 21v2h4v-2a7 7 0 0 0 4.4-1.6l2.5 1.5 2-3.4-2.1-1.6c.1-.3.1-.7.1-1z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-logout" viewBox="0 0 24 24">
+      <path d="M16 13v-2H7V8l-5 4 5 4v-3zM20 3h-8v2h8v14h-8v2h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" fill="currentColor"/>
+    </symbol>
+  </svg>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">TAU</div>
+        <div class="brand-info">
+          <h2>Tarlac Agricultural University</h2>
+          <p>Smart Campus Portal</p>
+        </div>
+        <div class="brand-avatar">
+          <img src="./avatar.jpg" alt="User avatar" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
+          <svg class="avatar-fallback" viewBox="0 0 36 36" aria-hidden="true" style="display:none">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#2563eb"/>
+                <stop offset="1" stop-color="#4f46e5"/>
+              </linearGradient>
+            </defs>
+            <circle cx="18" cy="18" r="18" fill="url(#g1)" />
+            <path d="M18 20c-4 0-6 2-6 3v1h12v-1c0-1-2-3-6-3zm0-9a3 3 0 100 6 3 3 0 000-6z" fill="rgba(255,255,255,0.95)"/>
+          </svg>
+        </div>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" type="button" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+
+      <nav class="nav-menu">
+        <div class="nav-group">
+          <h3>Main Navigation</h3>
+          <a href="#" class="nav-link active" data-title="Home" data-description="Welcome to the dashboard overview.">
+            <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-home"></use></svg></span>
+            <span class="link-text">Home</span>
+          </a>
+          <a href="#" class="nav-link" data-title="Products" data-description="Browse available products and services.">
+            <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-products"></use></svg></span>
+            <span class="link-text">Products</span>
+          </a>
+          <a href="#" class="nav-link" data-title="Categories" data-description="Explore product categories.">
+            <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-categories"></use></svg></span>
+            <span class="link-text">Categories</span>
+          </a>
+        </div>
+
+        <div class="nav-group">
+          <h3>Shopping</h3>
+          <a href="#" class="nav-link" data-title="Cart" data-description="Review your selected items.">
+            <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg></span>
+            <span class="link-text">Cart</span>
+          </a>
+          <a href="#" class="nav-link" data-title="My Orders" data-description="Check your order history.">
+            <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-orders"></use></svg></span>
+            <span class="link-text">My Orders</span>
+          </a>
+          <a href="#" class="nav-link" data-title="Wishlist" data-description="Save items for later.">
+            <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-wishlist"></use></svg></span>
+            <span class="link-text">Wishlist</span>
+          </a>
+        </div>
+
+        <div class="nav-group">
+          <h3>Account</h3>
+          <a href="#" class="nav-link" data-title="Profile" data-description="Manage your personal profile.">
+            <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-profile"></use></svg></span>
+            <span class="link-text">Profile</span>
+          </a>
+          <a href="#" class="nav-link" data-title="Settings" data-description="Update your account preferences.">
+            <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-settings"></use></svg></span>
+            <span class="link-text">Settings</span>
+          </a>
+        </div>
+
+        <div class="nav-group">
+          <h3>System</h3>
+          <a href="#" class="nav-link logout" data-action="logout" data-title="Logout" data-description="You are about to sign out.">
+            <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-logout"></use></svg></span>
+            <span class="link-text">Logout</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="content-area">
+      <header class="content-header">
+        <div>
+          <p class="eyebrow">Dashboard</p>
+          <h1 id="page-title">Home</h1>
+        </div>
+        <button class="content-button" type="button" onclick="toggleMenu()">Toggle Menu</button>
+      </header>
+
+      <section class="card">
+        <h2 id="page-description">Welcome to the dashboard overview.</h2>
+        <p>This side menu bar is built as a separate page and opens after successful login.</p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
