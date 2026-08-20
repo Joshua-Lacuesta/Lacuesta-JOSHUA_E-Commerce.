@@ -121,16 +121,23 @@
     <main class="content-area">
       <header class="content-header">
         <div>
-          <p class="eyebrow">Dashboard</p>
+          <p class="eyebrow">TAU Market</p>
           <h1 id="page-title">Home</h1>
         </div>
-        <button class="content-button" type="button" onclick="toggleMenu()">Toggle Menu</button>
+        <div class="header-actions">
+          <span class="cart-summary"><span id="cart-count">1</span> item in cart</span>
+          <button class="content-button" type="button" onclick="toggleMenu()" aria-label="Toggle side menu">Toggle Menu</button>
+        </div>
       </header>
 
-      <section class="card">
-        <h2 id="page-description">Welcome to the dashboard overview.</h2>
-        <p>This side menu bar is built as a separate page and opens after successful login.</p>
-      </section>
+      <div id="page-content" aria-live="polite"></div>
+
+      <footer class="site-footer">
+        <strong>Republic of the Philippines | Tarlac Agricultural University</strong>
+        <span>Camiling, Tarlac | +6345 934 0716 | presoffice@tau.edu.ph</span>
+        <span>Vision: TAU as one of the leading and globally recognized smart agricultural universities</span>
+        <span>2025 | Ranked 308</span>
+      </footer>
     </main>
   </div>
 </body>
