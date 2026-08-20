@@ -37,15 +37,15 @@ if (savedProfile) {
 
 let selectedCategory = 'All';
 const productCatalog = [
-  { name: 'TAU Black Ballpen', category: 'School Essentials', description: 'Smooth black ballpen for classes and campus work.', price: 'PHP 49.00', image: '../EXAMPLES/CP56-Black-Regal-Ballpen-1024x1024.jpg' },
-  { name: 'Permanent Black Marker', category: 'School Essentials', description: 'Reliable marker for labels, projects, and presentations.', price: 'PHP 89.00', image: '../EXAMPLES/61Ksyl+vVvL._AC_.jpg' },
-  { name: 'TAU Gel Pen', category: 'School Essentials', description: 'Smooth everyday pen for notes and assignments.', price: 'PHP 59.00', image: '../EXAMPLES/CP56-Black-Regal-Ballpen-1024x1024.jpg' },
-  { name: 'Organic Seed Starter Kit', category: 'Agri Supplies', description: 'Vegetable seeds, soil pellets, and planting guide.', price: 'PHP 349.00', image: '../EXAMPLES/espoma-organic-seed-starter-4818d59d88344c44a8d8ab2d320cf8de.jpg' },
-  { name: 'Organic Pumpkin Seeds', category: 'Agri Supplies', description: 'Quality pumpkin seeds for nutritious crop production.', price: 'PHP 199.00', image: '../EXAMPLES/61DqAz3WONL._SL1200_.jpg' },
-  { name: 'Recycled Garden Bricks', category: 'Agri Supplies', description: 'Sustainable recycled material for garden projects.', price: 'PHP 249.00', image: '../EXAMPLES/OIP (4).jpg' },
-  { name: 'Premium White Rice', category: 'Fresh Harvest', description: 'Clean, quality rice from local agricultural growers.', price: 'PHP 299.00', image: '../EXAMPLES/types-of-rice-long-grain-white-600x400.jpg' },
-  { name: 'Fresh Goat Milk', category: 'Fresh Harvest', description: 'Fresh dairy product from trusted local farm partners.', price: 'PHP 159.00', image: '../EXAMPLES/goat-milk-6763139-1.jpeg' },
-  { name: 'Sunflower Seeds', category: 'Fresh Harvest', description: 'Nutritious seeds prepared from a local harvest selection.', price: 'PHP 179.00', image: '../EXAMPLES/Sunflower-Seeds.webp' }
+  { name: 'TAU Black Ballpen', category: 'School Essentials', description: 'Smooth black ballpen for classes and campus work.', price: 'PHP 49.00', image: 'assets/ballpen.jpg' },
+  { name: 'Permanent Black Marker', category: 'School Essentials', description: 'Reliable marker for labels, projects, and presentations.', price: 'PHP 89.00', image: 'assets/marker.jpg' },
+  { name: 'TAU Gel Pen', category: 'School Essentials', description: 'Smooth everyday pen for notes and assignments.', price: 'PHP 59.00', image: 'assets/ballpen.jpg' },
+  { name: 'Organic Seed Starter Kit', category: 'Agri Supplies', description: 'Vegetable seeds, soil pellets, and planting guide.', price: 'PHP 349.00', image: 'assets/seed-starter.jpg' },
+  { name: 'Organic Pumpkin Seeds', category: 'Agri Supplies', description: 'Quality pumpkin seeds for nutritious crop production.', price: 'PHP 199.00', image: 'assets/pumpkin-seeds.jpg' },
+  { name: 'Recycled Garden Bricks', category: 'Agri Supplies', description: 'Sustainable recycled material for garden projects.', price: 'PHP 249.00', image: 'assets/garden-bricks.jpg' },
+  { name: 'Premium White Rice', category: 'Fresh Harvest', description: 'Clean, quality rice from local agricultural growers.', price: 'PHP 299.00', image: 'assets/rice.jpg' },
+  { name: 'Fresh Goat Milk', category: 'Fresh Harvest', description: 'Fresh dairy product from trusted local farm partners.', price: 'PHP 159.00', image: 'assets/goat-milk.jpeg' },
+  { name: 'Sunflower Seeds', category: 'Fresh Harvest', description: 'Nutritious seeds prepared from a local harvest selection.', price: 'PHP 179.00', image: 'assets/sunflower-seeds.webp' }
 ];
 
 function productCards(category = 'All') {
